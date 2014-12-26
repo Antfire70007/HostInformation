@@ -32,6 +32,7 @@ $.extend({
             info.origin = info.protocol + '//' + info.host;
         }
         else if (typeof url == 'undefined') {
+            info = location;
             info["host"] = location.host;
             info["protocol"] = location.protocol;
             info["pathname"] = location.pathname;
@@ -41,9 +42,10 @@ $.extend({
             info["port"] = location.port;
             info["origin"] = info["protocol"] + '//' + info["host"];
             info["query"] = location.search;
-            if (info.port == '') {
-                info.port = info.protocol == 'http:' ? 80 : info.protocol == 'https:' ? 443 : '';
-            }
+        
+        }
+        if (info.port == '') {
+            info.port = info.protocol == 'http:' ? 80 : info.protocol == 'https:' ? 443 : '';
         }
 		return info;
 	}
