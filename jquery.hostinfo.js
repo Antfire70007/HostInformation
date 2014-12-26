@@ -32,7 +32,7 @@ $.extend({
             info.origin = info.protocol + '//' + info.host;
         }
         else if (typeof url == 'undefined') {
-            info = location;
+           // info = location;
             info["host"] = location.host;
             info["protocol"] = location.protocol;
             info["pathname"] = location.pathname;
